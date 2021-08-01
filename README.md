@@ -22,7 +22,7 @@ O top é programa para gerenciar processos via linha de comando e é instalado p
 
 **Informações de CPU**
 
-![](.gitbook/assets/top-uso-cpu.png)
+![Parte do cabe&#xE7;alho do top que mostra o monitoramente de uso de CPU](.gitbook/assets/top-uso-cpu.png)
 
 No cabeçalho podemos ver na terceira linha as informações sobre o gasto de CPU pelos processos. Esses valores mostrados em porcentagem representam o gasto de CPU medido pelo top na última atualização feita. Por padrão a atualização ocorre a cada 3 segundos e esse valor pode ser alterado com a tecla \`d\` e fornecendo um novo valor, também em segundos.
 
@@ -38,7 +38,7 @@ Por fim, as demais colunas, 0,0 ag, 0,0 ih, 0,1 is e 0,0 tr, mostram o tempo gas
 
 **Informações de memória**
 
-![](.gitbook/assets/top-uso-memoria.png)
+![Parte do cabe&#xE7;alho do top que mostra o monitoramente da mem&#xF3;ria](.gitbook/assets/top-uso-memoria.png)
 
 Na quarta e quinta linha do cabeçalho vemos informações referentes à memória física e swap, respectivamente. A memória física é o que de fato tem instalado no computador, e a memória swap é utilizada como alternativa à memória física caso a mesma seja totalmente preenchida com os programas em execução no momento. O tamanho da memória swap pode ser configurado a qualquer momento, já que ela nada mais é do que um espaço reservado no disco rígido que poderá ser utilizado como memória RAM. No entanto, é aconselhável monitorar o uso de memória para evitar que isso aconteça pois o disco rígido é significativamente mais lento do que a memória RAM. Ou seja, será nítido que o computador está lento quando começar a usar a swap.
 
@@ -48,7 +48,7 @@ Nessa parte conseguimos identificar o total de memória livre no sistema, além 
 
 **Informações de processos**
 
-![](.gitbook/assets/top-processos.png)
+![Processos em execu&#xE7;&#xE3;o visualizados no top](.gitbook/assets/top-processos.png)
 
 Na parte dos processos em execução, existem as seguintes colunas:
 
@@ -76,10 +76,27 @@ Na parte dos processos em execução, existem as seguintes colunas:
 * **t:** stopped by debugger during trace. Processo foi parado por um debugger.
 * **Z:** zombie. O processo finalizou a execução e está aguardando o retorno do processo pai para sumir da lista de processos.
 
-**.** top
+**%CPU:** porcentagem de tempo de uso do CPU naquele processo. A imagem acima apresenta um valor maior do que 100% para o processo ghb, isso ocorre porque existem várias threads sendo executadas para esse processo e o tempo gasto em cada thread  está sendo somado. O camando **H** habilita a separação de threads de seu processo pai e vermos qual o uso de CPU por cada thread, nesse caso é não terá valor maior do que 100% caso esse comando for habilitado.
 
-. htop t
+**%MEM:** Porcentagem de uso de memória residente.
 
+**TEMPO+:** Tempo de CPU gasto com o processo desde que ele foi iniciado.
+
+**COMANDO:** Mostra o nome do comando ou a linha de comando executada para iniciar o processo. Na imagem acima mostra apenas o _ghb_ que é o nome do programa, caso aperte o comando **c,** o tipo de visualização é alterado para mostrar o caminho completo, isto é, _/usr/bin/ghb_.
+
+**Htop**
+
+Diferentemente do top que geralmente vem instalado previamente na máquina após a formatação, o htop precisa ser instalado. Provavelmente todos os gerenciadores de pacotes, independente da distribuição, possui o htop em sua lista de pacotes disponíveis. Ou seja, sua instalação é simples via linha de comando. Por exemplo, **pacman -S htop** para sistemas baseados no Arch Linux ****ou **apt install htop** para sistemas baseados no Debian.
+
+O htop também é um visualizador de processos, da mesma forma que o top. No entanto o htop possui algumas funcionalidades adicionais que o torna mais fácil de utilizar e visualizar seus processos. Podemos ver abaixo uma imagem do htop em funcionamento.
+
+![Htop em funcionamento](.gitbook/assets/htop.png)
+
+A navegação no htop é mais simples e fácil pois permite o uso do mouse para navegar na interface, apesar de ser um programa de linha de comando. Dessa forma, é possível optar entre o teclado ou mouse de acordo com sua preferencia. 
+
+Além disso, o monitoramente da carga no processador é mais simples pois o número de threads do processador e a carga imposta em cada uma delas é mostrada no topo. Note que existem cores diferentes na barra de uso de cada uma das threads, e cada uma dessas cores representa uma característica dos processos que estão sendo nelas. As cores possíveis são:
+
+* 
 . monitor do sistema via interface gráfica
 
 manipulando arquivos
