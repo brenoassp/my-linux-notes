@@ -1,6 +1,6 @@
 # Linux
 
-#### **Monitorando processos**
+## **Monitorando processos**
 
 Ao usar o computador, independente do sistema operacional utilizado, é importante ter o conhecimento básico de como monitorar os processos que estão sendo executados pelo sistema. Com isso, é possível identificar causas de lentidão no sistema ou até mesmo matar processos indesejados.
 
@@ -8,9 +8,9 @@ Em geral, toda interface gráfica já vem com um monitor de processos instalados
 
 Através do monitor do sistema é possível:
 
-- Ver todos os processos em execução, seu gasto de memória, cpu e usuário que iniciou o processo.
-- Enviar um sinal para o processo, por exemplo, pode-se enviar um sinal de kill para matá-lo.
-- Monitorar uso de CPU, memória e rede no sistema.
+* Ver todos os processos em execução, seu gasto de memória, cpu e usuário que iniciou o processo.
+* Enviar um sinal para o processo, por exemplo, pode-se enviar um sinal de kill para matá-lo.
+* Monitorar uso de CPU, memória e rede no sistema.
 
 Apesar dos monitores de processo via interface gráfica serem capazes de fazer muito bem o que eles se propõem a fazer, nem sempre é possível utilizá-los pois a interface gráfica pode não estar disponível, como é o caso de quando estamos conectados em uma máquina remota via linha de comando. Nesse caso geralmente utilizamos as ferramentas top ou htop para monitorar o sistema e seus processos.
 
@@ -62,6 +62,20 @@ Na parte dos processos em execução, existem as seguintes colunas:
 
 **VIRT:** tamanho da memória virtual utilizada.
 
+**RES:** Resident Memory Size. É um subconjunto da memória virtual. Pra mais detalhes teria que ler mais sobre tipos de memória no Linux.
+
+**SHR**: Shared Memory Size. É um subconjunto da memória residente \(RES\) que pode ser usada por outros processos.
+
+**S:** Status do processo. Pode ser um dos seguintes:
+
+* **D:** uninterruptible sleep. Indica que o processo está dormindo e não pode ser interrompido por "system calls", e.g., sigkill, sigterm e etc.
+* **I:** idle. 
+* **R:** running. O processo está sendo executado.
+* **S:** sleeping. Parecido com o status D, só que nesse caso o processo pode ser interrompido por um sinal.
+* **T:** stopped by job control signal. Processo foi parado utilizando um sinal.
+* **t:** stopped by debugger during trace. Processo foi parado por um debugger.
+* **Z:** zombie. O processo finalizou a execução e está aguardando o retorno do processo pai para sumir da lista de processos.
+
 **.** top
 
 . htop t
@@ -91,3 +105,4 @@ Distribuições linux. O que muda de uma pra outra?
 . Interface gráfica. Ex: gnome, kde, xfce, mate, lxde…
 
 . Programas instalados por padrão
+
