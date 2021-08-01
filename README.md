@@ -90,14 +90,33 @@ Diferentemente do top que geralmente vem instalado previamente na máquina após
 
 O htop também é um visualizador de processos, da mesma forma que o top. No entanto o htop possui algumas funcionalidades adicionais que o torna mais fácil de utilizar e visualizar seus processos. Podemos ver abaixo uma imagem do htop em funcionamento.
 
-![Htop em funcionamento](.gitbook/assets/htop.png)
+![Htop em funcionamento em um computador com 8 threads](.gitbook/assets/htop.png)
 
 A navegação no htop é mais simples e fácil pois permite o uso do mouse para navegar na interface, apesar de ser um programa de linha de comando. Dessa forma, é possível optar entre o teclado ou mouse de acordo com sua preferencia. 
 
-Além disso, o monitoramente da carga no processador é mais simples pois o número de threads do processador e a carga imposta em cada uma delas é mostrada no topo. Note que existem cores diferentes na barra de uso de cada uma das threads, e cada uma dessas cores representa uma característica dos processos que estão sendo nelas. As cores possíveis são:
+Além disso, o monitoramento da carga no processador é mais simples pois o número de threads do processador e a carga imposta em cada uma delas é mostrada no topo. Note que existem cores diferentes na barra de uso de cada uma das threads, e cada uma dessas cores representa uma característica dos processos que estão sendo nelas. As cores possíveis são:
 
-* 
-. monitor do sistema via interface gráfica
+* **Azul:** Baixa prioridade.
+* **Verde:** Normal.
+* **Vermelho:** Kernel.
+* **Ciano:** Virtualização.
+
+Existem também duas barras adicionais para representar o uso das memórias física e Swap, mas suas cores possuem outros significados, sendo:
+
+* **Memória física**
+  * **Verde:** utilizada.
+  * **Azul:** buffer.
+  * **Amarelo:** Cache.
+* **Swap**
+  * **Vermelho:** utilizada.
+
+Por fim, o corpo do htop é similar ao do top com cada coluna indicando uma informação sobre o processo em execução. É possível navegar por esses processos tanto pelo mouse quanto pelo teclado, além de ordenar os processos utilizando qualquer uma dessas colunas, para isso basta presisonar **F6** e escolher a coluna a ser utilizada na ordenação. Essa feature auxilia bastante na identificação de processos que estão consumindo muitos recursos. Caso seja necessário, pode-se utilizar a tecla **F9** para enviar um sinal para matar o processo, por exemplo. ****
+
+Existem várias outras possibilidades de uso do htop e sua ajuda pode ser visualizada pressionado a tecla **h** ou visitando o manual do programa no terminal com o comando **man htop.**
+
+**Monitor de sistema via interface gráfica**
+
+
 
 manipulando arquivos
 
